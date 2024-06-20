@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do-List</title>
+    <style>
+      
+      body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ac90ba;
+  
+}
+
+.main {
+  max-width: 400px;
+  margin: 200px auto;
+  background-color: #a162b1;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(50, 43, 43, 0.1);
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin: 0;
+  color: #141418;
+}
+
+#taskInput {
+  width: calc(100% - 82px);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.task {
+  padding: 8px 15px;
+  margin: 10px;
+  border: none;
+  background-color: #17191a;
+  color:rgb(231, 222, 235);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #1b191d;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="title">
+        <h2>To-Do-List</h2>
+      </div>
+      <input type="text" id="taskInput" placeholder="Enter the task" />
+      <button class="task" onclick="addTask()">Add the Task</button>
+      <ol id="todo-list"></ol>
+    </div>
+    <script>
+        let completedCount = 0;
+        function addTask() {
+        let taskInput = document.getElementById("taskInput");
+        let task = taskInput.value;
+        if (task.trim() === ""){
+          alert("Please enter task!!")
+          return
+        }
+
+        let todoList = document.getElementById("todo-list");
+        let li = document.createElement("li");
+        li.innerHTML = task + '<button  onclick="markCompleted(this)">Complete</button>';
+        todoList.appendChild(li);
+        taskInput.value = "";
+      }
+
+      function markCompleted(task) {
+        let listItem = task.parentNode;
+        listItem.classList.toggle("completed");
+      } 
+    
+    </script>
+  </body>
+</html>
