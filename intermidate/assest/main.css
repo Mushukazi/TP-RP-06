@@ -13,7 +13,8 @@ nav  {
     list-style: none;
     color: black;
     background-color: coral;
-    padding: 25px 15px;
+    padding: 25px 4rem;
+    height: 80px;
     
 
 }
@@ -40,9 +41,10 @@ ul > li:hover{
 .main-container{
     display: flex;
     width: 100%;
-    background-color: rgb(252, 253, 249);
+    background-color: rgb(230, 156, 83);
     justify-content: space-around;
-    height: 100%;
+    height: calc(100vh - 80px - 70px);
+    padding: 1rem 4rem;
 }
 p {
     color: black;
@@ -50,21 +52,30 @@ p {
     
 
 }
-
-.left-container img {
-    height: 60%;
+.left-container , .right-container{
     width: 50%;
-    margin-top: 80px;
-    margin-left: 80px;
+    height: 100%;
     
+
+}
+.left-container{
+    display: flex;
+    align-items: center;
 }
 
+.left-container img {
+    width: 400px;
+    height: 400px;
+}
+.right-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .right-container,p {
-    margin: 50px;
-    width: 50%;
-    margin-left: 10px;
-    
+    font-size: 0.8rem;
+    width: 40%;
     
 }
 
